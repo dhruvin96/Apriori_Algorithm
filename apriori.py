@@ -327,29 +327,27 @@ def compute_apriori(err_count, errors):
 				# Calculating confidence.
 				# conf = confidence(support(k, countlr),support(k, countl)
 
-				if (confidence(support(k, countlr),support(k, countl)) < min_confidence):
-					combinations = combinations - 1
-					continue
+				if (confidence(support(k, countlr),support(k, countl)) >= min_confidence):
 
-				# Storing association rules if minimum confidence criteria is achieved.
-				key = ""
-				value = ""
-				for j in left_hand:
-					key = key + " " + j
+					# Storing association rules if minimum confidence criteria is achieved.
+					key = ""
+					value = ""
+					for j in left_hand:
+						key = key + " " + j
 
-				key = key.strip()
+					key = key.strip()
 
-				for j in right_hand:
-					value = value + " " + j
+					for j in right_hand:
+						value = value + " " + j
 
-				value = value.strip()
+					value = value.strip()
 
-				if key in association_rules.keys():
-					association_rules[key].append(value)
-				else:
-					temp = []
-					temp.append(value)
-					association_rules[key] = temp
+					if key in association_rules.keys():
+						association_rules[key].append(value)
+					else:
+						temp = []
+						temp.append(value)
+						association_rules[key] = temp
 				######################
 				
 				ipl = len(index_positions) - 1 # Position of last index.
@@ -447,7 +445,7 @@ def compute_apriori(err_count, errors):
 		err_count = err_count + 1
 
 	except Exception as err:
-		errors[err_count] = "try 2-except Exception: " + err + "."
+		errors[err_count] = "try 2-except Exception: " + str(err) + "."
 		err_count = err_count + 1
 		print("Unknown error. Error Reported")
 
@@ -469,7 +467,7 @@ def compute_apriori(err_count, errors):
 print()
 print()
 
-message = "Welcome to Apriori software created by Dhruvinkumar Desai (NJIT ID: ********)\n\n"
+message = "Welcome to Apriori software created by Dhruvinkumar Desai (NJIT ID: 31456356 )\n\n"
 
 print(message.center(120) )
 
