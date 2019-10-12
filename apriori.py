@@ -467,7 +467,7 @@ def compute_apriori(err_count, errors):
 print()
 print()
 
-message = "Welcome to Apriori software created by Dhruvinkumar Desai (NJIT ID: 31456356 )\n\n"
+message = "Welcome to Apriori software created by Dhruvinkumar Desai (NJIT ID: ******** )\n\n"
 
 print(message.center(120) )
 
